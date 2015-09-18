@@ -45,6 +45,7 @@ var request = require('supertest'),
 					if(err) throw err;
 					res.should.have.status(200);
 					res.body.should.be.an.instanceOf(Object);
+					res.should.have.length(10).and.have.property('studNo');
 					done();
 					
 				});

@@ -41,10 +41,11 @@ var request = require('supertest'),
 			
 			
 			it('should return the newly created record', function(done){
-				request(url).get('/student/zydrickxxx').end(function(err, res){
+				request(url).post('/student').send({'studNo': 2012-12345, 'name': 'Anna', 'bdate': '1996-12-12'}).end(function(err, res){
 					if(err) throw err;
 					res.should.have.status(200);
 					res.body.should.be.an.instanceOf(Object);
+				//	res.should.have.length(10).and.have.property('studNo');
 					done();
 					
 				});
